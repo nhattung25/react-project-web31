@@ -90,11 +90,13 @@ export default function Contact() {
                 </div>
                 <div className="container">
                   <div className="col-12 d-flex my-2 justify-content-end">
-                    <input
+                    <button
                       className="submit-btn"
                       type="submit"
                       defaultValue="GỬI"
-                    />
+                    >
+                      GỬI
+                    </button>
                   </div>
                 </div>
               </div>

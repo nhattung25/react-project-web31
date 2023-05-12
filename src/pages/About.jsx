@@ -18,7 +18,7 @@ export default function About() {
           <div className="container">
             <div className="row py-5 my-5">
               <div className="col-12 col-md-6 about-thumbnail">
-                <img src="./img/about-thumbnail.jpg" alt="" />
+                <img src="/icon/about-1.jpg" alt="" />
               </div>
               <div className="col-12 col-md-6">
                 <div className="para-title my-4">AI ĐÃ TẠO RA CATPAW</div>
@@ -48,7 +48,7 @@ export default function About() {
               </div>
             </div>
             <div className="col-12 col-md-6 about-thumbnail">
-              <img src="./img/thumbnail/thumbnail-12.jpg" alt="" />
+              <img src="/icon/about-2.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function About() {
               </div>
             </div>
             <div className="col-12 col-md-6 about-thumbnail">
-              <img src="./img/about-thumbnail-2.jpg" alt="" />
+              <img src="/icon/about-3.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function About() {
               </div>
             </div>
             <div className="col-12 col-md-6 about-thumbnail">
-              <img src="./img/about-thumbnail-3.jpg" alt="" />
+              <img src="/icon/about-3.jpg" alt="" />
             </div>
           </div>
         </div>
