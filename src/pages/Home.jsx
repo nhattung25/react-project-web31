@@ -61,9 +61,11 @@ const options2 = {
 };
 
 export default function Home() {
-  const itemCard = products.map((product) => (
-    <ProductCard key={product} product={product} />
-  ));
+  const itemCard = products.map((product, index) => {
+    if (index < 8) {
+      return <ProductCard key={product} product={product} />;
+    }
+  });
 
   return (
     <div>

@@ -264,12 +264,12 @@ section {
 .item-card {
   box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
   position: relative;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 .card-thumbnail img {
   min-height: 220px;
   max-height: 230px !important;
-object-fit: fill;
+  object-fit: fill;
 }
 
 .card-name {
