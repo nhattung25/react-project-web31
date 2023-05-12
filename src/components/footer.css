@@ -1,0 +1,66 @@
+
+
+a {
+  text-decoration: none !important;
+  color: unset !important;
+}
+
+footer {
+  width: 100%;
+  font-weight: 500;
+  font-size: 14px;
+  color: #ffffff;
+  background: #1d9bf0;
+  padding: 20px;
+}
+
+.footer-title {
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 32px;
+}
+.footer-icon {
+  width: 24px;
+  height: 24px;
+}
+.footer-icon-2 {
+  width: 40px;
+  height: 40px;
+}
+.address,
+.email,
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.term {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.media-payment {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.icon-row {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+.icon-row-2 {
+  display: flex;
+  gap: 45px;
+  align-items: center;
+}
