@@ -1,13 +1,13 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
-
+{/* <img src="./product-thumbnails/cat-thumbnail/8.jpg" alt=""></img> */}
 export default function ProductCard({ product }) {
   return (
     <Col sm={6} md={3}>
       <div className="item-card">
         <div className="item-content">
           <div className="card-thumbnail">
-            <img src={product.img} alt="Không thể hiển thị" />
+            <img src={product.image} alt="Không thể hiển thị" />
           </div>
           <div className="card-content">
             <div className="card-name">{product.name}</div>

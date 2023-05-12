@@ -7,7 +7,7 @@ export const products = [
     des: "Mèo Anh lông ngắn Silver xuất sứ Thái Lan. Đã tiêm phòng và có chứng từ đầy đủ",
     quantity: 10,
     rate: 4,
-    image: "/img/cat-thumbnail/1.jpg",
+    image: "./product-thumbnails/cat-thumbnail/1.jpg",
     about:
       "Mèo Anh lông ngắn là giống mèo dễ chăm sóc. Chúng không có vấn đề sức khỏe bẩm sinh, không có yêu cầu chế độ ăn uống đặc biệt và là vật nuôi vui vẻ, hòa đồng. Chúng khỏe mạnh, thông minh, tình cảm và là những con mèo nhà lý tưởng.Mèo Anh lông ngắn trưởng thành thường nặng từ 11 – 15 pound đối với con đực và 8 – 12 pound đối với con cái. Sẽ không mất nhiều thời gian để giữ cho mèo hoặc mèo con của bạn hạnh phúc – rất nhiều tình yêu thương, thức ăn ngon, nước sạch, môi trường an toàn và chăm sóc sức khỏe tốt.",
     warranty:
@@ -22,7 +22,7 @@ export const products = [
     des: "Mèo Anh lông ngắn Silver xuất sứ Thái Lan. Đã tiêm phòng và có chứng từ đầy đủ",
     quantity: 9,
     rate: 4.5,
-    image: "/img/cat-thumbnail/2.jpg",
+    image: "./product-thumbnails/cat-thumbnail/2.jpg",
     about:
       "Mèo Anh lông ngắn là giống mèo dễ chăm sóc. Chúng không có vấn đề sức khỏe bẩm sinh, không có yêu cầu chế độ ăn uống đặc biệt và là vật nuôi vui vẻ, hòa đồng. Chúng khỏe mạnh, thông minh, tình cảm và là những con mèo nhà lý tưởng.Mèo Anh lông ngắn trưởng thành thường nặng từ 11 – 15 pound đối với con đực và 8 – 12 pound đối với con cái. Sẽ không mất nhiều thời gian để giữ cho mèo hoặc mèo con của bạn hạnh phúc – rất nhiều tình yêu thương, thức ăn ngon, nước sạch, môi trường an toàn và chăm sóc sức khỏe tốt.",
     warranty:
@@ -37,7 +37,7 @@ export const products = [
     des: "Mèo Anh lông ngắn Silver xuất sứ Thái Lan. Đã tiêm phòng và có chứng từ đầy đủ",
     quantity: 9,
     rate: 4.7,
-    image: "/img/cat-thumbnail/3.jpg",
+    image: "./product-thumbnails/cat-thumbnail/3.jpg",
     about:
       "Mèo Anh lông ngắn là giống mèo dễ chăm sóc. Chúng không có vấn đề sức khỏe bẩm sinh, không có yêu cầu chế độ ăn uống đặc biệt và là vật nuôi vui vẻ, hòa đồng. Chúng khỏe mạnh, thông minh, tình cảm và là những con mèo nhà lý tưởng.Mèo Anh lông ngắn trưởng thành thường nặng từ 11 – 15 pound đối với con đực và 8 – 12 pound đối với con cái. Sẽ không mất nhiều thời gian để giữ cho mèo hoặc mèo con của bạn hạnh phúc – rất nhiều tình yêu thương, thức ăn ngon, nước sạch, môi trường an toàn và chăm sóc sức khỏe tốt.",
     warranty:
@@ -52,7 +52,7 @@ export const products = [
     des: "Mèo Anh lông ngắn Silver xuất sứ Thái Lan. Đã tiêm phòng và có chứng từ đầy đủ",
     quantity: 9,
     rate: 4.3,
-    image: "/img/cat-thumbnail/4.jpg",
+    image: "./product-thumbnails/cat-thumbnail/4.jpg",
     about:
       "Mèo Anh lông ngắn là giống mèo dễ chăm sóc. Chúng không có vấn đề sức khỏe bẩm sinh, không có yêu cầu chế độ ăn uống đặc biệt và là vật nuôi vui vẻ, hòa đồng. Chúng khỏe mạnh, thông minh, tình cảm và là những con mèo nhà lý tưởng.Mèo Anh lông ngắn trưởng thành thường nặng từ 11 – 15 pound đối với con đực và 8 – 12 pound đối với con cái. Sẽ không mất nhiều thời gian để giữ cho mèo hoặc mèo con của bạn hạnh phúc – rất nhiều tình yêu thương, thức ăn ngon, nước sạch, môi trường an toàn và chăm sóc sức khỏe tốt.",
     warranty:
@@ -67,7 +67,7 @@ export const products = [
     des: "Mèo Anh lông ngắn Silver xuất sứ Thái Lan. Đã tiêm phòng và có chứng từ đầy đủ",
     quantity: 2,
     rate: 4.1,
-    image: "/img/cat-thumbnail/5.jpg",
+    image: "./product-thumbnails/cat-thumbnail/5.jpg",
     about:
       "Mèo Anh lông ngắn là giống mèo dễ chăm sóc. Chúng không có vấn đề sức khỏe bẩm sinh, không có yêu cầu chế độ ăn uống đặc biệt và là vật nuôi vui vẻ, hòa đồng. Chúng khỏe mạnh, thông minh, tình cảm và là những con mèo nhà lý tưởng.Mèo Anh lông ngắn trưởng thành thường nặng từ 11 – 15 pound đối với con đực và 8 – 12 pound đối với con cái. Sẽ không mất nhiều thời gian để giữ cho mèo hoặc mèo con của bạn hạnh phúc – rất nhiều tình yêu thương, thức ăn ngon, nước sạch, môi trường an toàn và chăm sóc sức khỏe tốt.",
     warranty:
@@ -82,7 +82,7 @@ export const products = [
     des: "Mèo Anh lông ngắn Silver xuất sứ Thái Lan. Đã tiêm phòng và có chứng từ đầy đủ",
     quantity: 2,
     rate: 4.8,
-    image: "/img/cat-thumbnail/6.jpg",
+    image: "./product-thumbnails/cat-thumbnail/6.jpg",
     about:
       "Mèo Anh lông ngắn là giống mèo dễ chăm sóc. Chúng không có vấn đề sức khỏe bẩm sinh, không có yêu cầu chế độ ăn uống đặc biệt và là vật nuôi vui vẻ, hòa đồng. Chúng khỏe mạnh, thông minh, tình cảm và là những con mèo nhà lý tưởng.Mèo Anh lông ngắn trưởng thành thường nặng từ 11 – 15 pound đối với con đực và 8 – 12 pound đối với con cái. Sẽ không mất nhiều thời gian để giữ cho mèo hoặc mèo con của bạn hạnh phúc – rất nhiều tình yêu thương, thức ăn ngon, nước sạch, môi trường an toàn và chăm sóc sức khỏe tốt.",
     warranty:
@@ -97,7 +97,7 @@ export const products = [
     des: "Mèo Anh lông ngắn Silver xuất sứ Thái Lan. Đã tiêm phòng và có chứng từ đầy đủ",
     quantity: 2,
     rate: 4.8,
-    image: "/img/cat-thumbnail/7.jpg",
+    image: "./product-thumbnails/cat-thumbnail/7.jpg",
     about:
       "Mèo Anh lông ngắn là giống mèo dễ chăm sóc. Chúng không có vấn đề sức khỏe bẩm sinh, không có yêu cầu chế độ ăn uống đặc biệt và là vật nuôi vui vẻ, hòa đồng. Chúng khỏe mạnh, thông minh, tình cảm và là những con mèo nhà lý tưởng.Mèo Anh lông ngắn trưởng thành thường nặng từ 11 – 15 pound đối với con đực và 8 – 12 pound đối với con cái. Sẽ không mất nhiều thời gian để giữ cho mèo hoặc mèo con của bạn hạnh phúc – rất nhiều tình yêu thương, thức ăn ngon, nước sạch, môi trường an toàn và chăm sóc sức khỏe tốt.",
     warranty:
@@ -112,7 +112,7 @@ export const products = [
     des: "Mèo Anh lông ngắn Silver xuất sứ Thái Lan. Đã tiêm phòng và có chứng từ đầy đủ",
     quantity: 4,
     rate: 4.3,
-    image: "/img/cat-thumbnail/8.jpg",
+    image: "./product-thumbnails/cat-thumbnail/8.jpg",
     about:
       "Mèo Anh lông ngắn là giống mèo dễ chăm sóc. Chúng không có vấn đề sức khỏe bẩm sinh, không có yêu cầu chế độ ăn uống đặc biệt và là vật nuôi vui vẻ, hòa đồng. Chúng khỏe mạnh, thông minh, tình cảm và là những con mèo nhà lý tưởng.Mèo Anh lông ngắn trưởng thành thường nặng từ 11 – 15 pound đối với con đực và 8 – 12 pound đối với con cái. Sẽ không mất nhiều thời gian để giữ cho mèo hoặc mèo con của bạn hạnh phúc – rất nhiều tình yêu thương, thức ăn ngon, nước sạch, môi trường an toàn và chăm sóc sức khỏe tốt.",
     warranty:
