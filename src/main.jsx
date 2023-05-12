@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-// import Products from "./pages/Products";
+import Products from "./pages/Products.jsx";
 import Blog from "./pages/Blog";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact";
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: "/", element: <Home /> },
-      // { path: "/products", element: <Products /> },
+      { path: "/products", element: <Products /> },
       { path: "/blog", element: <Blog /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },

@@ -19,23 +19,19 @@ export default function Nav() {
             >
               <span className="navbar-toggler-icon" />
             </button>
-            <a className="navbar-brand" href="./index.html">
-              <img src="./icon/logo-brand.png" alt="" />
-            </a>
+            <NavLink to="/" className="navbar-brand">
+              <img src="/icon/logo-brand.png" alt="" />
+            </NavLink>
             <div
               className="offcanvas offcanvas-start d-lg-none px-3 w-50"
               id="mobile-menu"
             >
-              <a className="navbar-brand off" href="./index.html">
+              <NavLink to="/" className="navbar-brand off">
                 <img src="./icon/logo-brand.png" className="w-50" alt="" />
-              </a>
+              </NavLink>
               <ul className="navbar-nav">
                 <li className="nav-item border-bottom py-2">
-                  <a
-                    className="nav-link active"
-                    aria-current="page"
-                    href="./index.html"
-                  >
+                  <NavLink to="/" className="nav-link" aria-current="page">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={16}
@@ -47,10 +43,14 @@ export default function Nav() {
                       <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
                     </svg>
                     TRANG CHỦ
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item border-bottom py-2">
-                  <a className="nav-link" href="./products.html">
+                  <NavLink
+                    to="/products"
+                    className="nav-link"
+                    href="./products.html"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={16}
@@ -62,10 +62,10 @@ export default function Nav() {
                       <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z" />
                     </svg>
                     SẢN PHẨM
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item border-bottom py-2">
-                  <a className="nav-link" href="./blog.html">
+                  <NavLink to="/blog" className="nav-link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={16}
@@ -78,10 +78,10 @@ export default function Nav() {
                       <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z" />
                     </svg>
                     CATBLOG
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item border-bottom py-2">
-                  <a className="nav-link" href="./about.html">
+                  <NavLink to="/about" className="nav-link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={16}
@@ -94,10 +94,10 @@ export default function Nav() {
                       <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                     </svg>
                     GIỚI THIỆU
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item border-bottom py-2">
-                  <a className="nav-link" href="./contact.html">
+                  <NavLink to="/contact" className="nav-link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={16}
@@ -109,7 +109,7 @@ export default function Nav() {
                       <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
                     </svg>
                     LIÊN HỆ
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -119,16 +119,12 @@ export default function Nav() {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <NavLink
-                    to="/"
-                    className="nav-link active"
-                    aria-current="page"
-                  >
+                  <NavLink to="/" className="nav-link" aria-current="page">
                     TRANG CHỦ
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="">
+                  <NavLink className="nav-link" to="/products">
                     SẢN PHẨM
                   </NavLink>
                 </li>

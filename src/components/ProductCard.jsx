@@ -1,6 +1,6 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
-{/* <img src="./product-thumbnails/cat-thumbnail/8.jpg" alt=""></img> */}
+
 export default function ProductCard({ product }) {
   return (
     <Col sm={6} md={3}>

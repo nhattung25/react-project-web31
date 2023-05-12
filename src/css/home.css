@@ -42,10 +42,13 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-   
+
 .owl-dot {
   width: 50px;
   margin-left: 10px;
+}
+.owl-theme .owl-dots .owl-dot span {
+  background: #d6d6d6 !important;
 }
 
 .owl-theme .owl-dots .owl-dot span {
@@ -182,23 +185,26 @@ section {
 
 /* tab */
 .nav-tabs {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
   width: 100%;
   display: flex;
   gap: 20px;
   justify-content: center;
-  border-color: #1777e8;
+  border-color: #1777e8 !important;
   --bs-nav-tabs-link-hover-border-color: none;
 }
 .nav-tabs .nav-item {
   margin: unset;
+  border-bottom: 1px;
+  border-bottom: 1px solid #1777e8;
 }
 
 .nav-tabs .nav-item .nav-link {
   background-color: #8bbbf3;
   border: none;
-  color: white;
-  border-bottom: 1px solid #1777e8;
+  color: white !important;
+
+  font-weight: 700;
 }
 .nav-tabs .nav-item .nav-link.active {
   background-color: #1777e8;
@@ -258,10 +264,12 @@ section {
 .item-card {
   box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
   position: relative;
+  margin-bottom: 20px;
 }
 .card-thumbnail img {
-  max-height: 250px !important;
-  object-fit: cover;
+  min-height: 220px;
+  max-height: 230px !important;
+object-fit: fill;
 }
 
 .card-name {
@@ -269,15 +277,15 @@ section {
   font-size: 18px;
   text-align: center;
   color: #223444;
-  padding: 5px;
-  margin-top: 5px;
+  padding: 10px;
+  height: 75px;
 }
 .card-price {
   font-weight: 900;
   font-size: 16px;
   text-align: center;
   color: #1d9bf0;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
 }
 .bi-star-fill {
   color: rgba(242, 229, 84, 0.85);
