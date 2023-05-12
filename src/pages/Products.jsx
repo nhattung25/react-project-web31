@@ -1,8 +1,16 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import "../css/products.css";
+import { products } from "./products";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import ProductCardPage from "../components/ProductsCardPage";
+import Col from "react-bootstrap/Col";
 
 export default function Products() {
+  const itemCard = products.map((product) => (
+    <ProductCardPage key={product} product={product} />
+  ));
   return (
     <div>
       <div className="main-content">
@@ -11,14 +19,14 @@ export default function Products() {
             <div className="container product-title">
               <span>SẢN PHẨM</span>
               <div className="title-bg">
-                <img src="./assets/back-ground/title-bg1.png" alt="" />
+                <img src="/icon/title-bg1.png" alt="" />
               </div>
             </div>
           </div>
         </section>
         <div className="container">
-          <div className="row">
-            <div className="col-12 col-sm-6 col-md-3 my-2">
+          <Row>
+            <Col sm={6} md={3}>
               <div className="product-search-bar">
                 <input
                   className="product-search-input"
@@ -309,12 +317,15 @@ export default function Products() {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-12 col-sm-6 col-md-9">
+            </Col>
+            <Col sm={6} md={9}>
               <div className="product-list">
-                <div className="row" />
+                <Container>
+                  <Row>{itemCard}</Row>
+                </Container>
+
                 {/* Pagination */}
-                <div className="container">
+                <Container className="pagination">
                   <nav aria-label="Page navigation example">
                     <ul className="pagination">
                       <li className="page-item">
@@ -344,10 +355,10 @@ export default function Products() {
                       </li>
                     </ul>
                   </nav>
-                </div>
+                </Container>
               </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </div>
       </div>
     </div>
