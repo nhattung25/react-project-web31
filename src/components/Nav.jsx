@@ -146,7 +146,7 @@ export default function Nav() {
               </ul>
             </div>
             <div className="user-cart">
-              <a className="nav-link" href="#">
+              <NavLink to="/" className="nav-link">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width={20}
@@ -161,8 +161,8 @@ export default function Nav() {
                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
                   />
                 </svg>
-              </a>
-              <a className="nav-link" href="./shopping-cart.html">
+              </NavLink>
+              <NavLink to="/shoping-cart" className="nav-link">
                 <div className="shopping-cart">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +175,7 @@ export default function Nav() {
                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                   </svg>
                 </div>
-              </a>
+              </NavLink>
             </div>
           </div>
         </nav>

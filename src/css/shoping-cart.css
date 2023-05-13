@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:200");
 
 body {
-  background-color: #f5f5f5;
+  background-color: #f5f5f5 !important;
 }
 
 .main-content {
@@ -267,7 +267,7 @@ input:focus {
 
 .product-back {
   display: block;
-  color: #1777e8;
+  color: #1777e8 !important;
   text-align: center;
   margin-top: 10px;
   font-weight: 600;

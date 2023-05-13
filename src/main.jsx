@@ -8,11 +8,10 @@ import Products from "./pages/Products.jsx";
 import Blog from "./pages/Blog";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact";
+import ShopingCart from "./pages/ShopingCart";
 import Layout from "./components/Layout.jsx";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
-import "../node_modules/bootstrap/dist/js/bootstrap"
-
-
+import "../node_modules/bootstrap/dist/js/bootstrap";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +22,7 @@ const router = createBrowserRouter([
       { path: "/blog", element: <Blog /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
+      { path: "/shoping-cart", element: <ShopingCart /> },
     ],
   },
 ]);
