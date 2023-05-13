@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../css/contact.css";
+import { Col, Container, Row } from "react-bootstrap";
 
 export default function Contact() {
   return (
@@ -10,9 +11,9 @@ export default function Contact() {
         <div className="contact-title">LIÊN HỆ</div>
 
         {/* Contact */}
-        <div className="container">
-          <div className="row my-4">
-            <div className="col-12 col-md-6 contact-alert-content">
+        <Container>
+          <Row>
+            <Col md={6} className="contact-alert-content">
               <div className="contact-alert-des">
                 Catpaw muốn được nghe ý kiến từ quý khách. Nếu có bất kỳ thông
                 tin gì cần giải đáp, vui lòng gửi tin nhắn và để lại thông tin
@@ -100,8 +101,8 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-12 col-md-6 contact-map">
+            </Col>
+            <Col md={6} className="contact-map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7448.608504107532!2d105.7763939451385!3d21.020508757480027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454ac07228aff%3A0xce3f8e359e6e2a28!2zxJDDrG5oIFRow7RuLCBNeSBEaW5oIDIsIFThu6sgTGnDqm0sIEhhbm9pLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1679590700243!5m2!1sen!2s"
                 width={550}
@@ -111,9 +112,9 @@ export default function Contact() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </div>
   );

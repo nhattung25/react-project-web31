@@ -1,5 +1,7 @@
 import React from "react";
 import "../css/about.css";
+import { NavLink } from "react-router-dom";
+import { Col, Container, Row } from "react-bootstrap";
 
 export default function About() {
   return (
@@ -7,20 +9,20 @@ export default function About() {
       <div className="main-content">
         {/* Hot post, Seach bar and filted post */}
         <div className="about-title">GIỚI THIỆU VỀ CATPAW</div>
-        <div className="container para-1 my-5">
+        <Container className="container para-1 my-5">
           Bạn có muốn tạo ra một cuộc sống vui vẻ một cách có ý thức cho bản
           thân và những chú mèo của mình không? Bạn đang tìm kiếm thông tin để
           giữ cho các thành viên trong gia đình mèo của bạn khỏe mạnh, hạnh phúc
           và mãn nguyện? CatPaw là nguồn tài nguyên toàn diện giúp bạn có cuộc
           sống có ý thức, sức khỏe và hạnh phúc cho mèo và con người của chúng.
-        </div>
+        </Container>
         <div className="para-2">
-          <div className="container">
-            <div className="row py-5 my-5">
-              <div className="col-12 col-md-6 about-thumbnail">
+          <Container>
+            <Row className="py-5 my-5">
+              <Col md={6} className="about-thumbnail">
                 <img src="/icon/about-1.jpg" alt="" />
-              </div>
-              <div className="col-12 col-md-6">
+              </Col>
+              <Col md={6}>
                 <div className="para-title my-4">AI ĐÃ TẠO RA CATPAW</div>
                 <div>
                   Catpaw được tạo ra bởi tôi - một người yêu thích thú cưng, đặc
@@ -30,13 +32,13 @@ export default function About() {
                   lại nhiều niềm vui, sự hứng thú cũng như thêm yêu quý những
                   chú mèo cưng của bạn.
                 </div>
-              </div>
-            </div>
-          </div>
+              </Col>
+            </Row>
+          </Container>
         </div>
-        <div className="container my-5">
-          <div className="row">
-            <div className="col-12 col-md-6">
+        <Container className="my-5">
+          <Row>
+            <Col md={6}>
               <div className="para-title">CATPAW BLOG CÓ GÌ</div>
               <div className="text">
                 Với những hiểu biết của mình cùng với sự tìm tòi, nghiên cứu,
@@ -46,15 +48,15 @@ export default function About() {
                 mèo cưng. Bên cạnh đó bạn cũng có thể tìm thấy các bài viết thú
                 vị khác, những sự thật, những fact vui về chú mèo của bạn.
               </div>
-            </div>
-            <div className="col-12 col-md-6 about-thumbnail">
+            </Col>
+            <Col md={6} className="about-thumbnail">
               <img src="/icon/about-2.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-        <div className="container my-5">
-          <div className="row">
-            <div className="col-12 col-md-6">
+            </Col>
+          </Row>
+        </Container>
+        <Container className="my-5">
+          <Row>
+            <Col md={6}>
               <div className="para-title">CATPAW CÓ SẢN PHẨM GÌ</div>
               <div className="text">
                 Với những kinh nghiệm của mình trong việc nuôi thú cưng, hay cụ
@@ -65,15 +67,15 @@ export default function About() {
                 CATPAW nên bạn hoàn toàn có thể tin tưởng vào chất lượng cũng
                 như độ an toàn của những sản phẩm được cung cấp bởi CATPAW.
               </div>
-            </div>
-            <div className="col-12 col-md-6 about-thumbnail">
+            </Col>
+            <Col md={6} className="about-thumbnail">
               <img src="/icon/about-3.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-        <div className="container my-5">
-          <div className="row">
-            <div className="col-12 col-md-6">
+            </Col>
+          </Row>
+        </Container>
+        <Container className="my-5">
+          <Row>
+            <Col md={6}>
               <div className="para-title">TẠI SAO BẠN NÊN CHỌN CATPAW SHOP</div>
               <div className="text">
                 <ul>
@@ -83,19 +85,19 @@ export default function About() {
                   <li>Chính sách đổi trả linh hoạt</li>
                 </ul>
               </div>
-            </div>
-            <div className="col-12 col-md-6 about-thumbnail">
+            </Col>
+            <Col md={6} className="about-thumbnail">
               <img src="/icon/about-3.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-        <div className="container">
-          <div className="col-12 d-flex justify-content-center">
-            <a href="./index.html" className="homepage-btn">
+            </Col>
+          </Row>
+        </Container>
+        <Container>
+          <Col md={6} className="d-flex justify-content-center">
+            <NavLink to="/" className="homepage-btn">
               QUAY LẠI TRANG CHỦ
-            </a>
-          </div>
-        </div>
+            </NavLink>
+          </Col>
+        </Container>
       </div>
     </div>
   );

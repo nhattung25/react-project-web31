@@ -6,8 +6,7 @@ import "owl.carousel/dist/assets/owl.carousel.min.css";
 import "owl.carousel/dist/assets/owl.theme.default.min.css";
 import ProductCard from "../components/ProductCard";
 import { products } from "./products";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
+import { Col, Container, Row } from "react-bootstrap";
 
 const options1 = {
   margin: 15,
@@ -552,9 +551,9 @@ export default function Home() {
             </div>
             <span>SIÊU KHUYẾN MÃI</span>
           </div>
-          <div className="container">
-            <div className="row d-flex justify-content-center sale">
-              <div className="col-12 col-md-6 d-flex justify-content-center">
+          <Container>
+            <Row className="d-flex justify-content-center sale">
+              <Col md={6} className="d-flex justify-content-center">
                 <div className="sale-off">
                   <div className="sale-off-title">Siêu khuyến mãi</div>
                   <div className="sale-off-des">
@@ -566,8 +565,8 @@ export default function Home() {
                     <span>30</span> tháng <span>4</span> năm <span>2023</span>
                   </div>
                 </div>
-              </div>
-              <div className="col-12 col-md-6">
+              </Col>
+              <Col md={6}>
                 <div className="sale-off-banner">
                   <OwlCarousel
                     className="owl-3 owl-carousel owl-theme"
@@ -669,33 +668,34 @@ export default function Home() {
                     </a>
                   </OwlCarousel>
                 </div>
-              </div>
-            </div>
-          </div>
+              </Col>
+            </Row>
+          </Container>
         </section>
 
         {/* Sản phẩm theo chủ đề bán mèo */}
         <section>
-          <div className="container section-title">
+          <Container className="section-title">
             <div className="section-num">
               <span>3</span>
             </div>
             <span>MÈO CƯNG</span>
-          </div>
+          </Container>
           <div className="cat-listing">
             <Container>
               <Row>{itemCard}</Row>
             </Container>
           </div>
         </section>
+
         {/* Sản phẩm theo chủ đề Thực phẩm */}
         <section>
-          <div className="container section-title">
+          <Container className="section-title">
             <div className="section-num">
               <span>4</span>
             </div>
             <span>THỨC ĂN CHO MÈO</span>
-          </div>
+          </Container>
           <div className="food-listing">
             <Container>
               <Row>{itemCard}</Row>
@@ -705,12 +705,13 @@ export default function Home() {
 
         {/* Sản phẩm theo chủ đề Đồ dùng */}
         <section>
-          <div className="container section-title">
+          <Container className="section-title">
             <div className="section-num">
               <span>5</span>
             </div>
             <span>ĐỒ DÙNG CHO MÈO</span>
-          </div>
+          </Container>
+
           <div className="access-listing">
             <Container>
               <Row>{itemCard}</Row>
@@ -720,17 +721,23 @@ export default function Home() {
 
         {/* Phản hồi của khách hàng */}
         <section>
-          <div className="container">
-            <div className="row testimo-section">
-              <div className="col-12 col-md-4 d-flex justify-content-center align-items-center">
+          <Container>
+            <Row className="testimo-section">
+              <Col
+                md={4}
+                className="d-flex justify-content-center align-items-center"
+              >
                 <div className="testimo-tag">
                   <div className="testimo-title">PHẢN HỒI CỦA KHÁCH HÀNG</div>
                   <div className="testimo-text">
                     Cùng xem khách hàng của Catpaw đã phản hồi gì về Catpaw nhé.
                   </div>
                 </div>
-              </div>
-              <div className="col-12 col-md-8 d-flex justify-content-center align-items-center">
+              </Col>
+              <Col
+                md={8}
+                className="d-flex justify-content-center align-items-center"
+              >
                 <div className="testimonials">
                   {/* Nội dung quote hiển thị ở đây */}
                   <p className="text" />
@@ -763,17 +770,16 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  {/* </div> */}
                 </div>
-              </div>
-            </div>
-          </div>
+              </Col>
+            </Row>
+          </Container>
         </section>
 
         {/* Đăng ký nhận tin  */}
         <section>
-          <div className="container">
-            <div className="row">
+          <Container>
+            <Row>
               <div className="get-news">
                 <div className="get-news-content">
                   <div className="get-news-title">ĐĂNG KÝ NHẬN TIN</div>
@@ -791,8 +797,8 @@ export default function Home() {
                   <button className="get-news-btn">GỬI</button>
                 </div>
               </div>
-            </div>
-          </div>
+            </Row>
+          </Container>
         </section>
       </div>
     </div>

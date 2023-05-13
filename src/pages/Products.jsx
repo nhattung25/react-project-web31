@@ -2,10 +2,8 @@ import React from "react";
 // import { NavLink } from "react-router-dom";
 import "../css/products.css";
 import { products } from "./products";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import ProductCardPage from "../components/ProductsCardPage";
-import Col from "react-bootstrap/Col";
+import { Col, Container, Row } from "react-bootstrap";
 
 export default function Products() {
   const itemCard = products.map((product) => (
@@ -16,16 +14,18 @@ export default function Products() {
       <div className="main-content">
         <section>
           <div className="product-title">
-            <div className="container product-title">
+            <Container className="product-title">
               <span>SẢN PHẨM</span>
               <div className="title-bg">
                 <img src="/icon/title-bg1.png" alt="" />
               </div>
-            </div>
+            </Container>
           </div>
         </section>
-        <div className="container">
+
+        <Container>
           <Row>
+            {/* Filter */}
             <Col sm={6} md={3}>
               <div className="product-search-bar">
                 <input
@@ -197,7 +197,7 @@ export default function Products() {
                 </div>
               </div>
               <div className="hot-item-list">
-                <div className="container section-title">
+                <Container className="section-title">
                   <div className="section-num">
                     <span className="fire">
                       <svg
@@ -213,7 +213,7 @@ export default function Products() {
                     </span>
                   </div>
                   <span>BÁN CHẠY</span>
-                </div>
+                </Container>
                 <div className="swiper-container">
                   <button className="btn-prev">
                     <svg
@@ -318,6 +318,7 @@ export default function Products() {
                 </div>
               </div>
             </Col>
+            {/* Products list */}
             <Col sm={6} md={9}>
               <div className="product-list">
                 <Container>
@@ -359,7 +360,7 @@ export default function Products() {
               </div>
             </Col>
           </Row>
-        </div>
+        </Container>
       </div>
     </div>
   );
