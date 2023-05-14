@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 export default function ShopingCartItem({ item }) {
   return (
-    <Row>
+    <Row className="cart-item">
       <Col lg={5} className="d-flex justify-content-center item-left">
         <div className="cart-thumbnai">
           <img src={item.image} alt="Không thể hiển thị" />
@@ -15,7 +15,7 @@ export default function ShopingCartItem({ item }) {
           <div className="item-des">{item.des}</div>
         </div>
       </Col>
-      <Col lg={7} className="d-flex justify-content-center item-qty">
+      <Col lg={7} className="justify-content-center item-qty">
         <div className="item-price">{item.price}</div>
         <div className="qty-form">
           <button onclick="minusButton(1)">

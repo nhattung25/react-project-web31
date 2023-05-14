@@ -27,7 +27,7 @@ export default function Nav() {
               id="mobile-menu"
             >
               <NavLink to="/" className="navbar-brand off">
-                <img src="./icon/logo-brand.png" className="w-50" alt="" />
+                <img src="/icon/logo-brand.png" className="w-50" alt="" />
               </NavLink>
               <ul className="navbar-nav">
                 <li className="nav-item border-bottom py-2">
