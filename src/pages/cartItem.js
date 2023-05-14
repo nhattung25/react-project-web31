@@ -4,7 +4,7 @@ export const items = [
     id: 1,
     name: "Mèo Anh lông ngắn Silver",
     price: 15000000,
-    des: "Mèo Anh lông ngắn Silver xuất sứ Thái Lan. Đã tiêm phòng và có chứng từ đầy đủ",
+    des: "Mèo Anh lông ngắn Silver xuất sứ Thái Lan. ",
     quantity: 10,
     rate: 4,
     image: "/product-thumbnails/cat-thumbnail/1.jpg",

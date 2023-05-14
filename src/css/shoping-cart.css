@@ -114,8 +114,8 @@ body {
   gap: 20px;
 }
 .cart-thumbnai img {
-  width: 130px;
-  height: 130px;
+  width: 130px !important;
+  height: 130px !important;
   border-radius: 4px;
 }
 .item-name {
@@ -149,7 +149,8 @@ body {
   margin: 20px;
   display: flex !important;
   align-items: center;
-  gap: 2px;line-height: unset !important;
+  gap: 2px;
+  line-height: unset !important;
 }
 
 .item-qty button {
@@ -157,7 +158,6 @@ body {
   color: #1d9cf0bb;
   width: 30px;
   height: 30px;
-  
 }
 .item-qty input {
   width: 25px;

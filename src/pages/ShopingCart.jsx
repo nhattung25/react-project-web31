@@ -32,8 +32,18 @@ export default function ShopingCart() {
       <Container>
         <Row>
           <Col md={12} lg={9}>
-            {cartItem}
-            <div className="cart-item-list" />
+            <div className="row shopping-cart-title">
+              <div className="col-12 col-lg-5 d-flex justify-content-center">
+                SẢN PHẨM
+              </div>
+              <div className="col-12 col-lg-7 d-flex justify-content-center gap-5">
+                <div className="unit-price">ĐƠN GIÁ</div>
+                <div className="qty">SỐ LƯỢNG</div>
+                <div className="total-price">SỐ TIỀN</div>
+              </div>
+            </div>
+
+            <div className="cart-item-list">{cartItem}</div>
           </Col>
           <Col md={12} lg={3}>
             <div className="right">
