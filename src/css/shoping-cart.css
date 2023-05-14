@@ -125,6 +125,7 @@ body {
 }
 .item-info {
   width: 250px;
+  line-height: initial;
 }
 .item-des {
   font-size: 14px;
@@ -158,6 +159,7 @@ body {
   color: #1d9cf0bb;
   width: 30px;
   height: 30px;
+  line-height: initial;
 }
 .item-qty input {
   width: 25px;
@@ -196,6 +198,7 @@ input:focus {
   color: white;
   padding: 5px;
   width: 100%;
+  line-height: initial;
 }
 .invoice {
   background-color: white;
@@ -265,6 +268,7 @@ input:focus {
   padding: 5px;
   width: 100%;
   margin-top: 10px;
+  line-height: initial;
 }
 
 .product-back {
