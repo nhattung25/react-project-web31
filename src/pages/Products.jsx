@@ -8,6 +8,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
+import SwiperCore, { Autoplay } from "swiper";
+SwiperCore.use([Autoplay]);
 
 export default function Products() {
   const itemCard = products.map((product) => (
@@ -245,8 +247,12 @@ export default function Products() {
                     </svg>
                   </button>
                   <Swiper
-                    onAutoplay={true}
-                    loop={true}
+                    rewind={true}
+                    autoplay={{
+                      delay: 2500,
+                      disableOnInteraction: false,
+                    }}
+                    loop
                     direction="vertical"
                     spaceBetween={20}
                     slidesPerView={3}
