@@ -291,7 +291,7 @@
 .pag-item-active > a {
   background-color: #1d9bf0;
   border-radius: 6px;
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 600;
 }
 .pag-item:hover {

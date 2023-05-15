@@ -4,6 +4,10 @@ import "../css/products.css";
 import { products } from "./products";
 import ProductCardPage from "../components/ProductsCardPage";
 import { Col, Container, Row } from "react-bootstrap";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
 
 export default function Products() {
   const itemCard = products.map((product) => (
@@ -214,8 +218,9 @@ export default function Products() {
                   </div>
                   <span>BÁN CHẠY</span>
                 </Container>
+
                 <div className="swiper-container">
-                  <button className="btn-prev">
+                  <button className="btn-prev-pro">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={25}
@@ -227,7 +232,7 @@ export default function Products() {
                       <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
                     </svg>
                   </button>
-                  <button className="btn-next">
+                  <button className="btn-next-pro">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={25}
@@ -239,82 +244,85 @@ export default function Products() {
                       <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
                     </svg>
                   </button>
-                  <div className="swiper">
-                    <div className="swiper-wrapper">
-                      <div className="swiper-slide">
-                        <div className="hot-item">
-                          <img
-                            className="hot-item-thumbnai"
-                            src="./img/cat-thumbnail/8.jpg"
-                            alt=""
-                          />
-                          <div className="hot-item-content">
-                            <div className="hot-item-name">
-                              Munchkin Xanh Xám
-                            </div>
-                            <div className="hot-item-price">19.000.000đ</div>
-                            <div className="hot-item-sell">
-                              <span>Đã bán:</span> 15 sản phẩm
-                            </div>
+                  <Swiper
+                    onAutoplay={true}
+                    loop={true}
+                    direction="vertical"
+                    spaceBetween={20}
+                    slidesPerView={3}
+                    onSlideChange={() => console.log("slide change")}
+                    onSwiper={(swiper) => console.log(swiper)}
+                  >
+                    <SwiperSlide>
+                      <div className="hot-item">
+                        <img
+                          className="hot-item-thumbnai"
+                          src="/product-thumbnails/cat-thumbnail/8.jpg"
+                          alt=""
+                        />
+                        <div className="hot-item-content">
+                          <div className="hot-item-name">Munchkin Xanh Xám</div>
+                          <div className="hot-item-price">19.000.000đ</div>
+                          <div className="hot-item-sell">
+                            <span>Đã bán:</span> 15 sản phẩm
                           </div>
                         </div>
                       </div>
-                      <div className="swiper-slide">
-                        <div className="hot-item">
-                          <img
-                            className="hot-item-thumbnai"
-                            src="./img/food-thumbnail/5.jpg"
-                            alt=""
-                          />
-                          <div className="hot-item-content">
-                            <div className="hot-item-name">
-                              Me-O Adult Hải sản 1.2kg
-                            </div>
-                            <div className="hot-item-price">120.000 đ</div>
-                            <div className="hot-item-sell">
-                              <span>Đã bán:</span> 69 sản phẩm
-                            </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="hot-item">
+                        <img
+                          className="hot-item-thumbnai"
+                          src="/product-thumbnails/food-thumbnail/5.jpg"
+                          alt=""
+                        />
+                        <div className="hot-item-content">
+                          <div className="hot-item-name">
+                            Me-O Adult Hải sản 1.2kg
+                          </div>
+                          <div className="hot-item-price">120.000 đ</div>
+                          <div className="hot-item-sell">
+                            <span>Đã bán:</span> 69 sản phẩm
                           </div>
                         </div>
                       </div>
-                      <div className="swiper-slide">
-                        <div className="hot-item">
-                          <img
-                            className="hot-item-thumbnai"
-                            src="./img/food-thumbnail/10.jpg"
-                            alt=""
-                          />
-                          <div className="hot-item-content">
-                            <div className="hot-item-name">
-                              Zenith Cat 1.2kg
-                            </div>
-                            <div className="hot-item-price">220.000 ₫</div>
-                            <div className="hot-item-sell">
-                              <span>Đã bán:</span> 31 sản phẩm
-                            </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="hot-item">
+                        <img
+                          className="hot-item-thumbnai"
+                          src="/product-thumbnails/food-thumbnail/10.jpg"
+                          alt=""
+                        />
+                        <div className="hot-item-content">
+                          <div className="hot-item-name">Zenith Cat 1.2kg</div>
+                          <div className="hot-item-price">220.000 ₫</div>
+                          <div className="hot-item-sell">
+                            <span>Đã bán:</span> 31 sản phẩm
                           </div>
                         </div>
                       </div>
-                      <div className="swiper-slide">
-                        <div className="hot-item">
-                          <img
-                            className="hot-item-thumbnai"
-                            src="./img/food-thumbnail/9.jpg"
-                            alt=""
-                          />
-                          <div className="hot-item-content">
-                            <div className="hot-item-name">
-                              Whiskas Adult Cá thu 1.2kg
-                            </div>
-                            <div className="hot-item-price">115.000 ₫</div>
-                            <div className="hot-item-sell">
-                              <span>Đã bán:</span> 56 sản phẩm
-                            </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="hot-item">
+                        <img
+                          className="hot-item-thumbnai"
+                          src="/product-thumbnails/food-thumbnail/9.jpg"
+                          alt=""
+                        />
+                        <div className="hot-item-content">
+                          <div className="hot-item-name">
+                            Whiskas Adult Cá thu 1.2kg
+                          </div>
+                          <div className="hot-item-price">115.000 ₫</div>
+                          <div className="hot-item-sell">
+                            <span>Đã bán:</span> 56 sản phẩm
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
+                    </SwiperSlide>
+                    ...
+                  </Swiper>
                 </div>
               </div>
             </Col>
@@ -326,36 +334,67 @@ export default function Products() {
                 </Container>
 
                 {/* Pagination */}
-                <Container className="pagination">
-                  <nav aria-label="Page navigation example">
-                    <ul className="pagination">
-                      <li className="page-item">
-                        <a className="page-link" href="#" aria-label="Previous">
-                          <span aria-hidden="true">«</span>
-                        </a>
-                      </li>
-                      <li className="page-item">
-                        <a className="page-link" href="#">
-                          1
-                        </a>
-                      </li>
-                      <li className="page-item">
-                        <a className="page-link" href="#">
-                          2
-                        </a>
-                      </li>
-                      <li className="page-item">
-                        <a className="page-link" href="#">
-                          3
-                        </a>
-                      </li>
-                      <li className="page-item">
-                        <a className="page-link" href="#" aria-label="Next">
-                          <span aria-hidden="true">»</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
+                <Container>
+                  <ul className="pagination">
+                    <li className="pag-item">
+                      <a href="" className="pag-item-link">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="bi bi-caret-left-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                        </svg>
+                      </a>
+                    </li>
+                    <li className="pag-item pag-item-active">
+                      <a href="" className="pag-item-link">
+                        1{" "}
+                      </a>
+                    </li>
+                    <li className="pag-item">
+                      <a href="" className="pag-item-link">
+                        2{" "}
+                      </a>
+                    </li>
+                    <li className="pag-item">
+                      <a href="" className="pag-item-link">
+                        3{" "}
+                      </a>
+                    </li>
+                    <li className="pag-item">
+                      <a href="" className="pag-item-link">
+                        4{" "}
+                      </a>
+                    </li>
+                    <li className="pag-item">
+                      <a href="" className="pag-item-link">
+                        ...{" "}
+                      </a>
+                    </li>
+                    <li className="pag-item">
+                      <a href="" className="pag-item-link">
+                        10{" "}
+                      </a>
+                    </li>
+                    <li className="pag-item">
+                      <a href="" className="pag-item-link">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="bi bi-caret-right-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
                 </Container>
               </div>
             </Col>
