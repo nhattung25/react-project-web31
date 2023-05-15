@@ -92,6 +92,7 @@
 }
 .hot-item-list {
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 .hot-item {
   display: flex;
