@@ -1,9 +1,25 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import "../css/contact.css";
 import { Col, Container, Row } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 
 export default function Contact() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      usename: "",
+      useremail: "",
+      usermassage: "",
+    },
+  });
+  const onSubmit = (values) => {
+    console.log(values);
+  };
+  console.log(errors);
+
   return (
     <div>
       <div className="main-content">
@@ -100,6 +116,44 @@ export default function Contact() {
                     </button>
                   </div>
                 </div>
+
+                <form
+                  className="contact-alert-form
+                "
+                >
+                  <h4>Để lại lời nhắn</h4>
+                  <div className="contact-name">
+                    <label className="label">Tên</label>
+                    <input
+                      className="input"
+                      type="text"
+                      {...register("usename", {
+                        required: {
+                          value: true,
+                          message: "Vui lòng để lại tên",
+                        },
+                      })}
+                    />
+                  </div>
+                  <div className="contact-email">
+                    <label className="label">Email</label>
+                    <input
+                      className="input"
+                      type="text"
+                      {...register("useremail")}
+                    />
+                  </div>
+                  <div className="contact-mess">
+                    <label className="label">Lời nhắn</label>
+                    <textarea
+                      name=""
+                      id=""
+                      cols="30"
+                      rows="10"
+                      {...register("usermassage")}
+                    ></textarea>
+                  </div>
+                </form>
               </div>
             </Col>
             <Col md={6} className="contact-map">

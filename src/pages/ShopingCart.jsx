@@ -76,7 +76,9 @@ export default function ShopingCart() {
                 <div className="total">
                   Thành tiền <span>15.000.000 đ</span>
                 </div>
-                <button className="pay-btn">THANH TOÁN</button>
+                <NavLink to="/check-out" className="pay-btn">
+                  THANH TOÁN
+                </NavLink>
               </div>
               <NavLink to="/shoping-cart" className="product-back">
                 <svg
