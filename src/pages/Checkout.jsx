@@ -172,7 +172,12 @@ export default function Checkout() {
                 <span>Phương thức thanh toán</span>
               </Container>
               <div className="payment-item">
-                <input className="radio-input" type="radio" name="" id="" />
+                <input
+                  className="radio-input"
+                  type="radio"
+                  name="payment"
+                  id=""
+                />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width={30}
@@ -193,7 +198,7 @@ export default function Checkout() {
                 <input
                   className="radio-input"
                   type="radio"
-                  name=""
+                  name="payment"
                   id=""
                   defaultValue={1}
                 />
@@ -211,7 +216,12 @@ export default function Checkout() {
                 <span>Thanh toán khi nhận hàng</span>
               </div>
               <div className="payment-item">
-                <input className="radio-input" type="radio" name="" id="" />
+                <input
+                  className="radio-input"
+                  type="radio"
+                  name="payment"
+                  id=""
+                />
                 <svg
                   className="payment-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -257,7 +267,12 @@ export default function Checkout() {
                 Thanh toán qua MOMO
               </div>
               <div className="payment-item">
-                <input className="radio-input" type="radio" name="" id="" />
+                <input
+                  className="radio-input"
+                  type="radio"
+                  name="payment"
+                  id=""
+                />
                 <svg
                   className="payment-vnpay"
                   height="512px"
