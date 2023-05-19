@@ -164,7 +164,7 @@ textarea:focus {
   width: 100%;
   margin-top: 20px;
 }
-.total-price {
+.total-price-checkout {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;

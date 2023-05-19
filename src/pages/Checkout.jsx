@@ -363,7 +363,7 @@ export default function Checkout() {
                 </div>
               </div>
 
-              <div className="cart-item-checkout total-price">
+              <div className="cart-item-checkout total-price-checkout">
                 <span>Tổng:</span> 72.000 VND
               </div>
             </div>
