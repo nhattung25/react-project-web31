@@ -70,7 +70,9 @@ export default function Checkout() {
                       name="calc_shipping_provinces"
                       required=""
                     >
-                      <option value="">Tỉnh / Thành phố</option>
+                      <option value="" disabled selected="selected">
+                        Tỉnh / Thành phố
+                      </option>
                       <option value={1}>An Giang</option>
                       <option value={2}>Bà Rịa - Vũng Tàu</option>
                       <option value={3}>Bạc Liêu</option>

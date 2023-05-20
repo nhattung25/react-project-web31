@@ -11,7 +11,7 @@ export default function ProductCardPage({ product }) {
           </div>
           <div className="card-content">
             <div className="card-name">{product.name}</div>
-            <div className="card-price">{product.price}</div>
+            <div className="card-price">{product.price} VNĐ</div>
             <div className="card-meta">
               <div className="card-rate">
                 {product.rate}

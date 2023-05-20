@@ -44,16 +44,16 @@ const options2 = {
   nav: true,
   dots: false,
   autoplay: true,
-
   loop: true,
   smartSpeed: 800,
   responsive: {
     0: {
       items: 1,
       margin: 40,
+      center: true,
     },
 
-    1000: {
+    1100: {
       items: 2,
     },
   },

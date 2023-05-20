@@ -2,6 +2,7 @@ import React from "react";
 // import { NavLink } from "react-router-dom";
 import "../css/products.css";
 import { products } from "./products";
+import { categories } from "./categories";
 import ProductCardPage from "../components/ProductsCardPage";
 import { Col, Container, Row } from "react-bootstrap";
 // Import Swiper React components
@@ -10,14 +11,102 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import SwiperCore, { Autoplay } from "swiper";
 SwiperCore.use([Autoplay]);
+import { useState, useEffect } from "react";
+import { useSearchParams, useNavigate, Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 export default function Products() {
-  const itemCard = products.map((product) => (
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  // const [data, setData] = useState({});
+
+  // const [categories] = useState([]);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      categories: [],
+    },
+  });
+
+  //  useEffect(() => {
+  //    categoriesPromise.then(setCategories);
+  //  }, []);
+
+  //  useEffect(() => {
+  //    productsPromise.then(setData).catch(setError).finally(setIsLoading);
+  //  }, []);
+
+  const onFilter = (values) => {
+    searchParams.delete("page");
+
+    Object.entries(values).forEach(([key, values]) => {
+      searchParams.delete(key);
+      values.forEach((value) => searchParams.append(key, value));
+    });
+
+    setSearchParams(searchParams);
+  };
+
+  const onPageChange = (page) => {
+    if (page === 1) {
+      searchParams.delete("page");
+    } else {
+      searchParams.set("page", page);
+    }
+
+    setSearchParams(searchParams);
+  };
+
+  const pageSize = 9;
+  const currentPage = searchParams.get("page") || 1;
+
+  const selectedCategories = searchParams.getAll("categories");
+
+  let filteredProducts =
+    selectedCategories.length === 0
+      ? products || []
+      : (products || []).filter(
+          (products) => console.log(selectedCategories),
+          selectedCategories.includes(products.categories)
+        );
+
+  const products2 = filteredProducts.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
+
+  const totalPage = Math.ceil(filteredProducts.length / pageSize);
+
+  const itemCard = products2.map((product) => (
     <ProductCardPage key={product} product={product} />
   ));
+
   return (
     <div>
+      {isLoading && <div>Loading...</div>}
+
+      {error && <div>Error</div>}
+
       <div className="main-content">
+        <div className="loc">
+          <form onSubmit={handleSubmit(onFilter)}>
+            <h4>Categories</h4>
+            {categories.map((category) => (
+              <label key={category}>
+                <input
+                  type="checkbox"
+                  {...register("categories")}
+                  value={category}
+                />
+                {category}
+              </label>
+            ))}
+            <button>Lọc</button>
+          </form>
+        </div>
+
         <section>
           <div className="product-title">
             <Container className="product-title">
@@ -166,26 +255,7 @@ export default function Products() {
                             <div
                               id="slider-range"
                               className="noUi-target noUi-ltr noUi-horizontal noUi-background"
-                            >
-                              {/* <div class="noUi-base">
-                        <div
-                          class="noUi-origin noUi-connect"
-                          style="left: 0%"
-                        >
-                          <div
-                            class="noUi-handle noUi-handle-lower"
-                          ></div>
-                        </div>
-                        <div
-                          class="noUi-origin noUi-background"
-                          style="left: 22.089%"
-                        >
-                          <div
-                            class="noUi-handle noUi-handle-upper"
-                          ></div>
-                        </div>
-                      </div> */}
-                            </div>
+                            ></div>
                             <div className="price-filter d-flex align-items-center justify-content-center">
                               <p>Giá:</p>
                               <strong />
@@ -256,8 +326,8 @@ export default function Products() {
                     direction="vertical"
                     spaceBetween={20}
                     slidesPerView={3}
-                    onSlideChange={() => console.log("slide change")}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    // onSlideChange={() => console.log("slide change")}
+                    // onSwiper={(swiper) => console.log(swiper)}
                   >
                     <SwiperSlide>
                       <div className="hot-item">
@@ -341,64 +411,44 @@ export default function Products() {
 
                 {/* Pagination */}
                 <Container>
-                  <ul className="pagination">
+                  <ul className="pagi">
                     <li className="pag-item">
-                      <a href="" className="pag-item-link">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={16}
-                          height={16}
-                          fill="currentColor"
-                          className="bi bi-caret-left-fill"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
-                        </svg>
-                      </a>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={16}
+                        height={16}
+                        fill="currentColor"
+                        className="bi bi-caret-left-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                      </svg>
                     </li>
-                    <li className="pag-item pag-item-active">
-                      <a href="" className="pag-item-link">
-                        1{" "}
-                      </a>
-                    </li>
+
+                    {Array(totalPage)
+                      .fill(null)
+                      .map((value, index) => (
+                        <li>
+                          <button
+                            onClick={() => onPageChange(index + 1)}
+                            className="pag-item"
+                          >
+                            {index + 1}
+                          </button>
+                        </li>
+                      ))}
+
                     <li className="pag-item">
-                      <a href="" className="pag-item-link">
-                        2{" "}
-                      </a>
-                    </li>
-                    <li className="pag-item">
-                      <a href="" className="pag-item-link">
-                        3{" "}
-                      </a>
-                    </li>
-                    <li className="pag-item">
-                      <a href="" className="pag-item-link">
-                        4{" "}
-                      </a>
-                    </li>
-                    <li className="pag-item">
-                      <a href="" className="pag-item-link">
-                        ...{" "}
-                      </a>
-                    </li>
-                    <li className="pag-item">
-                      <a href="" className="pag-item-link">
-                        10{" "}
-                      </a>
-                    </li>
-                    <li className="pag-item">
-                      <a href="" className="pag-item-link">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={16}
-                          height={16}
-                          fill="currentColor"
-                          className="bi bi-caret-right-fill"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                        </svg>
-                      </a>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={16}
+                        height={16}
+                        fill="currentColor"
+                        className="bi bi-caret-right-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                      </svg>  
                     </li>
                   </ul>
                 </Container>

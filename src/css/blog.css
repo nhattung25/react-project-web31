@@ -269,14 +269,16 @@
 }
 
 /* Pagination css */
-.pagination {
+.pagi {
+  display: flex;
+  list-style: none;
   justify-content: center;
   align-items: center;
   gap: 5px;
   margin: 25px 0 80px 0;
 }
 
-.pag-item-link {
+.pag-item {
   font-style: normal;
   font-weight: 400;
   font-size: 18px;

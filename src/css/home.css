@@ -434,6 +434,12 @@ section {
   color: #1d9bf0;
 }
 
+.owl-carousel{
+    display: flex !important;  
+    /* flex-direction: row;    */
+    justify-content: center !important;  
+}
+
 /* Sale off banner css */
 
 .sale-off-banner {
@@ -451,6 +457,7 @@ section {
 
 .sale-off-item {
   max-width: 230px;
+  min-width: 150px;
   border-radius: 8px;
   cursor: pointer;
 }
