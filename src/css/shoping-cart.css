@@ -3,6 +3,9 @@
 body {
   background-color: #f5f5f5 !important;
 }
+label{
+  font-weight: 400 !important;
+}
 
 .main-content {
   margin-bottom: 100px;

@@ -69,7 +69,8 @@ export default function Products() {
       ? products || []
       : (products || []).filter(
           (products) => console.log(selectedCategories),
-          selectedCategories.includes(products.categories)
+          selectedCategories.includes(products.categories),
+          console.log(selectedCategories)
         );
 
   const products2 = filteredProducts.slice(
@@ -90,23 +91,6 @@ export default function Products() {
       {error && <div>Error</div>}
 
       <div className="main-content">
-        <div className="loc">
-          <form onSubmit={handleSubmit(onFilter)}>
-            <h4>Categories</h4>
-            {categories.map((category) => (
-              <label key={category}>
-                <input
-                  type="checkbox"
-                  {...register("categories")}
-                  value={category}
-                />
-                {category}
-              </label>
-            ))}
-            <button>Lọc</button>
-          </form>
-        </div>
-
         <section>
           <div className="product-title">
             <Container className="product-title">
@@ -205,20 +189,22 @@ export default function Products() {
                       >
                         <div className="accordion">
                           <ul>
-                            <li className="all-product">
-                              <input type="checkbox" name="" id="" /> Tất cả
-                            </li>
-                            <li className="check-cat">
-                              <input type="checkbox" name="" id="" /> Mèo cưng
-                            </li>
-                            <li className="check-food">
-                              <input type="checkbox" name="" id="" /> Thức ăn
-                              cho mèo
-                            </li>
-                            <li className="check-acces">
-                              <input type="checkbox" name="" id="" /> Phụ kiện
-                              cho mèo
-                            </li>
+                            <form onSubmit={handleSubmit(onFilter)}>
+                              {categories.map((category) => (
+                                <li className="check-cat">
+                                  <label key={category}>
+                                    <input
+                                      type="checkbox"
+                                      {...register("categories")}
+                                      value={category}
+                                    />
+
+                                    {category}
+                                  </label>
+                                </li>
+                              ))}
+                              <button class="button-filter">Lọc</button>
+                            </form>
                           </ul>
                         </div>
                       </div>
@@ -448,7 +434,7 @@ export default function Products() {
                         viewBox="0 0 16 16"
                       >
                         <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                      </svg>  
+                      </svg>
                     </li>
                   </ul>
                 </Container>
