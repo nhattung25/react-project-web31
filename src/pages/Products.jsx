@@ -16,8 +16,6 @@ import { useSearchParams, useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 export default function Products() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
   // const [data, setData] = useState({});
 
   // const [categories] = useState([]);
@@ -44,7 +42,14 @@ export default function Products() {
     Object.entries(values).forEach(([key, values]) => {
       searchParams.delete(key);
       values.forEach((value) => searchParams.append(key, value));
+      console.log(values);
     });
+
+    setSearchParams(searchParams);
+  };
+  const delFilter = () => {
+    searchParams.delete("categories");
+    // register = [];
 
     setSearchParams(searchParams);
   };
@@ -68,9 +73,8 @@ export default function Products() {
     selectedCategories.length === 0
       ? products || []
       : (products || []).filter(
-          (products) => console.log(selectedCategories),
-          selectedCategories.includes(products.categories),
-          console.log(selectedCategories)
+          (products) => selectedCategories.includes(products.categories),
+          console.log(products.category)
         );
 
   const products2 = filteredProducts.slice(
@@ -86,10 +90,6 @@ export default function Products() {
 
   return (
     <div>
-      {isLoading && <div>Loading...</div>}
-
-      {error && <div>Error</div>}
-
       <div className="main-content">
         <section>
           <div className="product-title">
@@ -205,6 +205,12 @@ export default function Products() {
                               ))}
                               <button class="button-filter">Lọc</button>
                             </form>
+                            <button
+                              class="button-filter"
+                              onClick={() => delFilter()}
+                            >
+                              Bỏ lọc
+                            </button>
                           </ul>
                         </div>
                       </div>
