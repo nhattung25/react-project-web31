@@ -189,21 +189,19 @@ section {
   width: 100%;
   display: flex;
   gap: 20px;
-  justify-content: center;
+  justify-content: center ;
   border-color: #1777e8 !important;
   --bs-nav-tabs-link-hover-border-color: none;
 }
 .nav-tabs .nav-item {
   margin: unset;
   border-bottom: 1px;
-  border-bottom: 1px solid #1777e8;
 }
 
 .nav-tabs .nav-item .nav-link {
   background-color: #8bbbf3;
   border: none;
   color: white !important;
-
   font-weight: 700;
 }
 .nav-tabs .nav-item .nav-link.active {
