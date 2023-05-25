@@ -1,7 +1,53 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.min.css";
+import "owl.carousel/dist/assets/owl.theme.default.min.css";
+import { useParams } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import "../css/detail-product.css";
+
+const options = {
+  margin: 15,
+  responsiveClass: true,
+  nav: true,
+  dots: false,
+  autoplay: true,
+  loop: true,
+  smartSpeed: 1000,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    400: {
+      items: 1,
+    },
+    600: {
+      items: 2,
+    },
+    700: {
+      items: 2,
+    },
+    800: {
+      items: 3,
+    },
+    1000: {
+      items: 4,
+    },
+  },
+};
 
 export default function DetailProduct() {
+  const { productId } = useParams();
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://catpaw-api.vercel.app/products/${productId}`)
+      .then((res) => res.json())
+      .then(setProduct);
+  }, [productId]);
+
   return (
     <div className="main-content">
       <section>
@@ -9,7 +55,7 @@ export default function DetailProduct() {
           <Container className="product-title">
             <span>CHI TIẾT SẢN PHẨM</span>
             <div className="title-bg">
-              <img src="./assets/back-ground/title-bg1.png" alt="" />
+              <img src="/icon/title-bg1.png" alt="" />
             </div>
           </Container>
         </div>
@@ -17,18 +63,15 @@ export default function DetailProduct() {
 
       <section>
         <Container>
-          <div className="row">
-            <div class="col-12 col-sm-6 col-md-4 ">
-              <img class="product-img" src="./img/cat-thumbnail/1.jpg" alt="" />
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
+          <Row className="row">
+            <Col sm={6} md={4}>
+              <img class="product-img" src={product.image} alt={product.name} />
+            </Col>
+            <Col sm={6} md={4}>
               <div class="product-info">
-                <div class="product-name">Mèo Anh lông ngắn Silver</div>
-                <div class="product-price">15.000.000đ</div>
-                <div class="short-des">
-                  Mèo Anh lông ngắn Silver xuất sứ Thái Lan. Đã tiêm phòng và có
-                  chứng từ đầy đủ
-                </div>
+                <div class="product-name">{product.name}</div>
+                <div class="product-price">{product.price} VNĐ</div>
+                <div class="short-des">{product.des}</div>
                 <div class="product-qty">
                   <span>Số lượng:</span>
                   <button>
@@ -71,14 +114,14 @@ export default function DetailProduct() {
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                     </svg>
                   </div>
-                  <div class="card-sale">8 lượt mua</div>
+                  <div class="card-sale">{product.sale} lượt mua</div>
                 </div>
                 <div class="buy">
                   <button class="buy-btn">Thêm vào giỏ</button>
                 </div>
               </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-4">
+            </Col>
+            <Col sm={12} md={4}>
               <div class="promotion-code">
                 <div class="promo-title">Mã khuyến mãi cho sản phẩm</div>
                 <div class="promo-item">
@@ -91,9 +134,9 @@ export default function DetailProduct() {
                   <span>CATPAW30</span> - Giảm giá 30%
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="container">
+            </Col>
+          </Row>
+          <Container>
             <ul className="nav nav-tabs">
               <li className="nav-item">
                 <a
@@ -126,47 +169,29 @@ export default function DetailProduct() {
                 </a>
               </li>
             </ul>
-          </div>
-          <div className="tab-content">
+          </Container>
+          <div className="tab-content-detail">
             <div role="tabpanel" className="tab-pane active" id="home">
-              <div className="container">
-                <div className="col-12 new-product">
-                  Mèo Anh lông ngắn là giống mèo dễ chăm sóc. Chúng không có vấn
-                  đề sức khỏe bẩm sinh, không có yêu cầu chế độ ăn uống đặc biệt
-                  và là vật nuôi vui vẻ, hòa đồng. Chúng khỏe mạnh, thông minh,
-                  tình cảm và là những con mèo nhà lý tưởng.
-                  <p>
-                    Mèo Anh lông ngắn trưởng thành thường nặng từ 11 – 15 pound
-                    đối với con đực và 8 – 12 pound đối với con cái. Sẽ không
-                    mất nhiều thời gian để giữ cho mèo hoặc mèo con của bạn hạnh
-                    phúc – rất nhiều tình yêu thương, thức ăn ngon, nước sạch,
-                    môi trường an toàn và chăm sóc sức khỏe tốt.
-                  </p>
-                </div>
-              </div>
+              <Container>
+                <Col className="new-product">{product.about}</Col>
+              </Container>
             </div>
             <div role="tabpanel" className="tab-pane" id="profile">
-              <div className="container">
-                Trả góp LS 0% trong 12 tháng (Chi tiết) Bảo hành lên tới 365
-                ngày. Bảo hiểm sức khỏe lên tới 1,000,000đ Miễn phí vận chuyển
-                toàn quốc (Chi tiết) Giảm 500,000đ khi mua bé thứ 2. Giảm trọn
-                đời 5% khi mua phụ kiện. Giảm trọn đời 20% Spa cắt tỉa – Áp dụng
-                với KH khu vực Hà Nội.
-              </div>
+              <Container>{product.warranty}</Container>
             </div>
             <div role="tabpanel" className="tab-pane" id="contact">
-              <div className="container">
+              <Container>
                 <div className="comment-title">
                   Để lại đánh giá và nhận xét của bạn về sản phẩm
                 </div>
-              </div>
+              </Container>
             </div>
           </div>
         </Container>
       </section>
       {/* Sản phẩm khác */}
       <section>
-        <div className="container section-title">
+        <Container className="section-title">
           <div className="section-num">
             <span>
               <svg
@@ -182,22 +207,23 @@ export default function DetailProduct() {
             </span>
           </div>
           <span>SẢN PHẨM KHÁC</span>
-        </div>
-        <div className="container">
+        </Container>
+
+        <Container>
           <div className="new-product">
-            <div className="owl-2 owl-carousel owl-theme">
-              <a href="./detail-product.html">
+            <OwlCarousel className=" owl-carousel owl-theme" {...options}>
+              <Link to={`/products/${product.id}`}>
                 <div className="item-card">
                   <div className="item-content">
                     <div className="card-thumbnail">
-                      <img src="./img/cat-thumbnail/8.jpg" alt="" />
+                      <img src={product.image} alt="" />
                     </div>
                     <div className="card-content">
-                      <div className="card-name">Munchkin Xanh Xám</div>
-                      <div className="card-price">19.700.000 ₫</div>
+                      <div className="card-name">{product.name}</div>
+                      <div className="card-price">{product.price} VNĐ</div>
                       <div className="card-meta">
                         <div className="card-rate">
-                          4.3
+                          {product.rate}
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width={16}
@@ -209,7 +235,7 @@ export default function DetailProduct() {
                             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                           </svg>
                         </div>
-                        <div className="card-sale">8 lượt mua</div>
+                        <div className="card-sale">{product.sale} lượt mua</div>
                       </div>
                     </div>
                     <div className="buy">
@@ -217,12 +243,15 @@ export default function DetailProduct() {
                     </div>
                   </div>
                 </div>
-              </a>
-              <a href="./detail-product.html">
+              </Link>
+              <Link to={`/products/${product.id}`}>
                 <div className="item-card">
                   <div className="item-content">
                     <div className="card-thumbnail">
-                      <img src="./img/food-thumbnail/5.jpg" alt="" />
+                      <img
+                        src="/product-thumbnails/food-thumbnail/5.jpg"
+                        alt=""
+                      />
                     </div>
                     <div className="card-content">
                       <div className="card-name">Me-O Adult Hải sản 1.2kg</div>
@@ -249,12 +278,15 @@ export default function DetailProduct() {
                     </div>
                   </div>
                 </div>
-              </a>
-              <a href="./detail-product.html">
+              </Link>
+              <Link to={`/products/${product.id}`}>
                 <div className="item-card">
                   <div className="item-content">
                     <div className="card-thumbnail">
-                      <img src="./img/food-thumbnail/10.jpg" alt="" />
+                      <img
+                        src="/product-thumbnails/food-thumbnail/10.jpg"
+                        alt=""
+                      />
                     </div>
                     <div className="card-content">
                       <div className="card-name">Zenith Cat 1.2kg</div>
@@ -281,12 +313,15 @@ export default function DetailProduct() {
                     </div>
                   </div>
                 </div>
-              </a>
-              <a href="./detail-product.html">
+              </Link>
+              <Link to={`/products/${product.id}`}>
                 <div className="item-card">
                   <div className="item-content">
                     <div className="card-thumbnail">
-                      <img src="./img/food-thumbnail/9.jpg" alt="" />
+                      <img
+                        src="/product-thumbnails/food-thumbnail/9.jpg"
+                        alt=""
+                      />
                     </div>
                     <div className="card-content">
                       <div className="card-name">
@@ -315,12 +350,15 @@ export default function DetailProduct() {
                     </div>
                   </div>
                 </div>
-              </a>
-              <a href="./detail-product.html">
+              </Link>
+              <Link to={`/products/${product.id}`}>
                 <div className="item-card">
                   <div className="item-content">
                     <div className="card-thumbnail">
-                      <img src="./img/accessories-thumbnail/5.jpg" alt="" />
+                      <img
+                        src="/product-thumbnails/accessories-thumbnail/5.jpg"
+                        alt=""
+                      />
                     </div>
                     <div className="card-content">
                       <div className="card-name">Cần câu mèo</div>
@@ -347,10 +385,10 @@ export default function DetailProduct() {
                     </div>
                   </div>
                 </div>
-              </a>
-            </div>
+              </Link>
+            </OwlCarousel>
           </div>
-        </div>
+        </Container>
       </section>
     </div>
   );

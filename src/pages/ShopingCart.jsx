@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import ShopingCartItem from "../components/ShopingCartItem";
 import { items } from "./cartItem";
+import { useEffect, useState } from "react";
 
 export default function ShopingCart() {
   const cartItem = items.map((item) => (

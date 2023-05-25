@@ -1,5 +1,4 @@
 import React from "react";
-// import { NavLink } from "react-router-dom";
 import "../css/products.css";
 import { products } from "./products";
 import { categories } from "./categories";
@@ -16,9 +15,6 @@ import { useSearchParams, useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 export default function Products() {
-  // const [data, setData] = useState({});
-
-  // const [categories] = useState([]);
 
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -27,14 +23,6 @@ export default function Products() {
       categories: [],
     },
   });
-
-  //  useEffect(() => {
-  //    categoriesPromise.then(setCategories);
-  //  }, []);
-
-  //  useEffect(() => {
-  //    productsPromise.then(setData).catch(setError).finally(setIsLoading);
-  //  }, []);
 
   const onFilter = (values) => {
     searchParams.delete("page");
@@ -85,7 +73,7 @@ export default function Products() {
   const totalPage = Math.ceil(filteredProducts.length / pageSize);
 
   const itemCard = products2.map((product) => (
-    <ProductCardPage key={product} product={product} />
+    <ProductCardPage key={product.id} product={product} />
   ));
 
   return (

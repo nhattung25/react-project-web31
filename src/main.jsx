@@ -11,9 +11,9 @@ import Contact from "./pages/Contact";
 import ShopingCart from "./pages/ShopingCart";
 import Layout from "./components/Layout.jsx";
 import Checkout from "./pages/Checkout";
-
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../node_modules/bootstrap/dist/js/bootstrap";
+import DetailProduct from "./pages/DetailProduct";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +21,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/products", element: <Products /> },
+      { path: "/products/:productId", element: <DetailProduct /> },
       { path: "/blog", element: <Blog /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
