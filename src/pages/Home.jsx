@@ -65,6 +65,16 @@ export default function Home() {
       return <ProductCard key={product} product={product} />;
     }
   });
+  const itemCardFood = products.map((product, index) => {
+    if (10 < index && index < 19) {
+      return <ProductCard key={product} product={product} />;
+    }
+  });
+  const itemCardAccess = products.map((product, index) => {
+    if (20 < index && index < 29) {
+      return <ProductCard key={product} product={product} />;
+    }
+  });
 
   return (
     <div>
@@ -698,7 +708,7 @@ export default function Home() {
           </Container>
           <div className="food-listing">
             <Container>
-              <Row>{itemCard}</Row>
+              <Row>{itemCardFood}</Row>
             </Container>
           </div>
         </section>
@@ -714,7 +724,7 @@ export default function Home() {
 
           <div className="access-listing">
             <Container>
-              <Row>{itemCard}</Row>
+              <Row>{itemCardAccess}</Row>
             </Container>
           </div>
         </section>
